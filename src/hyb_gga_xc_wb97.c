@@ -8,11 +8,26 @@
 
 #include "util.h"
 
-#define XC_HYB_GGA_XC_WB97     463 /* Chai and Head-Gordon                     */
-#define XC_HYB_GGA_XC_WB97X    464 /* Chai and Head-Gordon                     */
-#define XC_HYB_GGA_XC_WB97X_V  466 /* Mardirossian and Head-Gordon             */
-#define XC_HYB_GGA_XC_WB97X_D  471 /* Chai and Head-Gordon                     */
-#define XC_HYB_GGA_XC_WB97X_D3 399 /* Lin et al                                */
+#define XC_HYB_GGA_XC_WB97         463 /* Chai and Head-Gordon                     */
+#define XC_HYB_GGA_XC_WB97X        464 /* Chai and Head-Gordon                     */
+#define XC_HYB_GGA_XC_WB97X_V      466 /* Mardirossian and Head-Gordon             */
+#define XC_HYB_GGA_XC_WB97X_D      471 /* Chai and Head-Gordon                     */
+#define XC_HYB_GGA_XC_WB97X_D3     399 /* Lin et al                                */
+#define XC_HYB_GGA_XC_WB97X_V_CX0  885
+#define XC_HYB_GGA_XC_WB97X_V_CX1  886
+#define XC_HYB_GGA_XC_WB97X_V_CX2  887
+#define XC_HYB_GGA_XC_WB97X_V_CX3  888
+#define XC_HYB_GGA_XC_WB97X_V_CX4  889
+#define XC_HYB_GGA_XC_WB97X_V_CSS0 890
+#define XC_HYB_GGA_XC_WB97X_V_CSS1 891
+#define XC_HYB_GGA_XC_WB97X_V_CSS2 892
+#define XC_HYB_GGA_XC_WB97X_V_CSS3 893
+#define XC_HYB_GGA_XC_WB97X_V_CSS4 894
+#define XC_HYB_GGA_XC_WB97X_V_COS0 895
+#define XC_HYB_GGA_XC_WB97X_V_COS1 896
+#define XC_HYB_GGA_XC_WB97X_V_COS2 897
+#define XC_HYB_GGA_XC_WB97X_V_COS3 898
+#define XC_HYB_GGA_XC_WB97X_V_COS4 899
 
 typedef struct {
   double c_x[5], c_ss[5], c_ab[5];
@@ -78,6 +93,111 @@ static const double par_wb97x_d3[N_PAR] = {
   1.000000, -4.868902,  21.295726, -36.020866, 19.177018,
   1.000000,  2.433266, -15.446008,  17.644390, -8.879494,
   1.0, -(1.0 - 0.195728), 0.25
+};
+
+static const double par_wb97x_v_cx0[N_PAR] = {
+   1.0,          0.0,          0.0,          0.0,          0.0,
+   0.0,          0.0,          0.0,          0.0,          0.0,
+   0.0,          0.0,          0.0,          0.0,          0.0,
+   0.0,         -1.0,   0.3
+};
+
+static const double par_wb97x_v_cx1[N_PAR] = {
+   0.0,          1.0,          0.0,          0.0,          0.0,
+   0.0,          0.0,          0.0,          0.0,          0.0,
+   0.0,          0.0,          0.0,          0.0,          0.0,
+   0.0,          0.0,   0.3
+};
+
+static const double par_wb97x_v_cx2[N_PAR] = {
+   0.0,          0.0,          1.0,          0.0,          0.0,
+   0.0,          0.0,          0.0,          0.0,          0.0,
+   0.0,          0.0,          0.0,          0.0,          0.0,
+   0.0,          0.0,   0.3
+};
+
+static const double par_wb97x_v_cx3[N_PAR] = {
+   0.0,          0.0,          0.0,          1.0,          0.0,
+   0.0,          0.0,          0.0,          0.0,          0.0,
+   0.0,          0.0,          0.0,          0.0,          0.0,
+   0.0,          0.0,   0.3
+};
+
+static const double par_wb97x_v_cx4[N_PAR] = {
+   0.0,          0.0,          0.0,          0.0,          1.0,
+   0.0,          0.0,          0.0,          0.0,          0.0,
+   0.0,          0.0,          0.0,          0.0,          0.0,
+   0.0,          0.0,   0.3
+};
+
+static const double par_wb97x_v_css0[N_PAR] = {
+   0.0,          0.0,          0.0,          0.0,          0.0,
+   1.0,          0.0,          0.0,          0.0,          0.0,
+   0.0,          0.0,          0.0,          0.0,          0.0,
+   0.0,          0.0,   0.3
+};
+
+static const double par_wb97x_v_css1[N_PAR] = {
+   0.0,          0.0,          0.0,          0.0,          0.0,
+   0.0,          1.0,          0.0,          0.0,          0.0,
+   0.0,          0.0,          0.0,          0.0,          0.0,
+   0.0,          0.0,   0.3
+};
+
+static const double par_wb97x_v_css2[N_PAR] = {
+   0.0,          0.0,          0.0,          0.0,          0.0,
+   0.0,          0.0,          1.0,          0.0,          0.0,
+   0.0,          0.0,          0.0,          0.0,          0.0,
+   0.0,          0.0,   0.3
+};
+
+static const double par_wb97x_v_css3[N_PAR] = {
+   0.0,          0.0,          0.0,          0.0,          0.0,
+   0.0,          0.0,          0.0,          1.0,          0.0,
+   0.0,          0.0,          0.0,          0.0,          0.0,
+   0.0,          0.0,   0.3
+};
+
+static const double par_wb97x_v_css4[N_PAR] = {
+   0.0,          0.0,          0.0,          0.0,          0.0,
+   0.0,          0.0,          0.0,          0.0,          1.0,
+   0.0,          0.0,          0.0,          0.0,          0.0,
+   0.0,          0.0,   0.3
+};
+
+static const double par_wb97x_v_cos0[N_PAR] = {
+   0.0,          0.0,          0.0,          0.0,          0.0,
+   0.0,          0.0,          0.0,          0.0,          0.0,
+   1.0,          0.0,          0.0,          0.0,          0.0,
+   0.0,          0.0,   0.3
+};
+
+static const double par_wb97x_v_cos1[N_PAR] = {
+   0.0,          0.0,          0.0,          0.0,          0.0,
+   0.0,          0.0,          0.0,          0.0,          0.0,
+   0.0,          1.0,          0.0,          0.0,          0.0,
+   0.0,          0.0,   0.3
+};
+
+static const double par_wb97x_v_cos2[N_PAR] = {
+   0.0,          0.0,          0.0,          0.0,          0.0,
+   0.0,          0.0,          0.0,          0.0,          0.0,
+   0.0,          0.0,          1.0,          0.0,          0.0,
+   0.0,          0.0,   0.3
+};
+
+static const double par_wb97x_v_cos3[N_PAR] = {
+   0.0,          0.0,          0.0,          0.0,          0.0,
+   0.0,          0.0,          0.0,          0.0,          0.0,
+   0.0,          0.0,          0.0,          1.0,          0.0,
+   0.0,          0.0,   0.3
+};
+
+static const double par_wb97x_v_cos4[N_PAR] = {
+   0.0,          0.0,          0.0,          0.0,          0.0,
+   0.0,          0.0,          0.0,          0.0,          0.0,
+   0.0,          0.0,          0.0,          0.0,          1.0,
+   0.0,          0.0,   0.3
 };
 
 static void
@@ -175,6 +295,246 @@ const xc_func_info_type xc_func_info_hyb_gga_xc_wb97x_d3 = {
   XC_FLAGS_3D | XC_FLAGS_HYB_CAM | MAPLE2C_FLAGS,
   1e-14,
   {N_PAR, names, desc, par_wb97x_d3, set_ext_params_cpy_cam},
+  gga_xc_wb97_init, NULL,
+  NULL, &work_gga, NULL
+};
+
+#ifdef __cplusplus
+extern "C"
+#endif
+const xc_func_info_type xc_func_info_hyb_gga_xc_wb97x_v_cx0 = {
+  XC_HYB_GGA_XC_WB97X_V_CX0,
+  XC_EXCHANGE_CORRELATION,
+  "wB97X-V range-separated functional",
+  XC_FAMILY_HYB_GGA,
+  {&xc_ref_Mardirossian2014_9904, NULL, NULL, NULL, NULL},
+  XC_FLAGS_3D | XC_FLAGS_HYB_CAM | XC_FLAGS_VV10 | MAPLE2C_FLAGS,
+  1e-14,
+  {N_PAR, names, desc, par_wb97x_v_cx0, set_ext_params_cpy_cam},
+  gga_xc_wb97_init, NULL,
+  NULL, &work_gga, NULL
+};
+
+#ifdef __cplusplus
+extern "C"
+#endif
+const xc_func_info_type xc_func_info_hyb_gga_xc_wb97x_v_cx1 = {
+  XC_HYB_GGA_XC_WB97X_V_CX1,
+  XC_EXCHANGE_CORRELATION,
+  "wB97X-V range-separated functional",
+  XC_FAMILY_HYB_GGA,
+  {&xc_ref_Mardirossian2014_9904, NULL, NULL, NULL, NULL},
+  XC_FLAGS_3D | XC_FLAGS_HYB_CAM | XC_FLAGS_VV10 | MAPLE2C_FLAGS,
+  1e-14,
+  {N_PAR, names, desc, par_wb97x_v_cx1, set_ext_params_cpy_cam},
+  gga_xc_wb97_init, NULL,
+  NULL, &work_gga, NULL
+};
+
+#ifdef __cplusplus
+extern "C"
+#endif
+const xc_func_info_type xc_func_info_hyb_gga_xc_wb97x_v_cx2 = {
+  XC_HYB_GGA_XC_WB97X_V_CX2,
+  XC_EXCHANGE_CORRELATION,
+  "wB97X-V range-separated functional",
+  XC_FAMILY_HYB_GGA,
+  {&xc_ref_Mardirossian2014_9904, NULL, NULL, NULL, NULL},
+  XC_FLAGS_3D | XC_FLAGS_HYB_CAM | XC_FLAGS_VV10 | MAPLE2C_FLAGS,
+  1e-14,
+  {N_PAR, names, desc, par_wb97x_v_cx2, set_ext_params_cpy_cam},
+  gga_xc_wb97_init, NULL,
+  NULL, &work_gga, NULL
+};
+
+#ifdef __cplusplus
+extern "C"
+#endif
+const xc_func_info_type xc_func_info_hyb_gga_xc_wb97x_v_cx3 = {
+  XC_HYB_GGA_XC_WB97X_V_CX3,
+  XC_EXCHANGE_CORRELATION,
+  "wB97X-V range-separated functional",
+  XC_FAMILY_HYB_GGA,
+  {&xc_ref_Mardirossian2014_9904, NULL, NULL, NULL, NULL},
+  XC_FLAGS_3D | XC_FLAGS_HYB_CAM | XC_FLAGS_VV10 | MAPLE2C_FLAGS,
+  1e-14,
+  {N_PAR, names, desc, par_wb97x_v_cx3, set_ext_params_cpy_cam},
+  gga_xc_wb97_init, NULL,
+  NULL, &work_gga, NULL
+};
+
+#ifdef __cplusplus
+extern "C"
+#endif
+const xc_func_info_type xc_func_info_hyb_gga_xc_wb97x_v_cx4 = {
+  XC_HYB_GGA_XC_WB97X_V_CX4,
+  XC_EXCHANGE_CORRELATION,
+  "wB97X-V range-separated functional",
+  XC_FAMILY_HYB_GGA,
+  {&xc_ref_Mardirossian2014_9904, NULL, NULL, NULL, NULL},
+  XC_FLAGS_3D | XC_FLAGS_HYB_CAM | XC_FLAGS_VV10 | MAPLE2C_FLAGS,
+  1e-14,
+  {N_PAR, names, desc, par_wb97x_v_cx4, set_ext_params_cpy_cam},
+  gga_xc_wb97_init, NULL,
+  NULL, &work_gga, NULL
+};
+
+#ifdef __cplusplus
+extern "C"
+#endif
+const xc_func_info_type xc_func_info_hyb_gga_xc_wb97x_v_css0 = {
+  XC_HYB_GGA_XC_WB97X_V_CSS0,
+  XC_EXCHANGE_CORRELATION,
+  "wB97X-V range-separated functional",
+  XC_FAMILY_HYB_GGA,
+  {&xc_ref_Mardirossian2014_9904, NULL, NULL, NULL, NULL},
+  XC_FLAGS_3D | XC_FLAGS_HYB_CAM | XC_FLAGS_VV10 | MAPLE2C_FLAGS,
+  1e-14,
+  {N_PAR, names, desc, par_wb97x_v_css0, set_ext_params_cpy_cam},
+  gga_xc_wb97_init, NULL,
+  NULL, &work_gga, NULL
+};
+
+#ifdef __cplusplus
+extern "C"
+#endif
+const xc_func_info_type xc_func_info_hyb_gga_xc_wb97x_v_css1 = {
+  XC_HYB_GGA_XC_WB97X_V_CSS1,
+  XC_EXCHANGE_CORRELATION,
+  "wB97X-V range-separated functional",
+  XC_FAMILY_HYB_GGA,
+  {&xc_ref_Mardirossian2014_9904, NULL, NULL, NULL, NULL},
+  XC_FLAGS_3D | XC_FLAGS_HYB_CAM | XC_FLAGS_VV10 | MAPLE2C_FLAGS,
+  1e-14,
+  {N_PAR, names, desc, par_wb97x_v_css1, set_ext_params_cpy_cam},
+  gga_xc_wb97_init, NULL,
+  NULL, &work_gga, NULL
+};
+
+#ifdef __cplusplus
+extern "C"
+#endif
+const xc_func_info_type xc_func_info_hyb_gga_xc_wb97x_v_css2 = {
+  XC_HYB_GGA_XC_WB97X_V_CSS2,
+  XC_EXCHANGE_CORRELATION,
+  "wB97X-V range-separated functional",
+  XC_FAMILY_HYB_GGA,
+  {&xc_ref_Mardirossian2014_9904, NULL, NULL, NULL, NULL},
+  XC_FLAGS_3D | XC_FLAGS_HYB_CAM | XC_FLAGS_VV10 | MAPLE2C_FLAGS,
+  1e-14,
+  {N_PAR, names, desc, par_wb97x_v_css2, set_ext_params_cpy_cam},
+  gga_xc_wb97_init, NULL,
+  NULL, &work_gga, NULL
+};
+
+#ifdef __cplusplus
+extern "C"
+#endif
+const xc_func_info_type xc_func_info_hyb_gga_xc_wb97x_v_css3 = {
+  XC_HYB_GGA_XC_WB97X_V_CSS3,
+  XC_EXCHANGE_CORRELATION,
+  "wB97X-V range-separated functional",
+  XC_FAMILY_HYB_GGA,
+  {&xc_ref_Mardirossian2014_9904, NULL, NULL, NULL, NULL},
+  XC_FLAGS_3D | XC_FLAGS_HYB_CAM | XC_FLAGS_VV10 | MAPLE2C_FLAGS,
+  1e-14,
+  {N_PAR, names, desc, par_wb97x_v_css3, set_ext_params_cpy_cam},
+  gga_xc_wb97_init, NULL,
+  NULL, &work_gga, NULL
+};
+
+#ifdef __cplusplus
+extern "C"
+#endif
+const xc_func_info_type xc_func_info_hyb_gga_xc_wb97x_v_css4 = {
+  XC_HYB_GGA_XC_WB97X_V_CSS4,
+  XC_EXCHANGE_CORRELATION,
+  "wB97X-V range-separated functional",
+  XC_FAMILY_HYB_GGA,
+  {&xc_ref_Mardirossian2014_9904, NULL, NULL, NULL, NULL},
+  XC_FLAGS_3D | XC_FLAGS_HYB_CAM | XC_FLAGS_VV10 | MAPLE2C_FLAGS,
+  1e-14,
+  {N_PAR, names, desc, par_wb97x_v_css4, set_ext_params_cpy_cam},
+  gga_xc_wb97_init, NULL,
+  NULL, &work_gga, NULL
+};
+
+#ifdef __cplusplus
+extern "C"
+#endif
+const xc_func_info_type xc_func_info_hyb_gga_xc_wb97x_v_cos0 = {
+  XC_HYB_GGA_XC_WB97X_V_COS0,
+  XC_EXCHANGE_CORRELATION,
+  "wB97X-V range-separated functional",
+  XC_FAMILY_HYB_GGA,
+  {&xc_ref_Mardirossian2014_9904, NULL, NULL, NULL, NULL},
+  XC_FLAGS_3D | XC_FLAGS_HYB_CAM | XC_FLAGS_VV10 | MAPLE2C_FLAGS,
+  1e-14,
+  {N_PAR, names, desc, par_wb97x_v_cos0, set_ext_params_cpy_cam},
+  gga_xc_wb97_init, NULL,
+  NULL, &work_gga, NULL
+};
+
+#ifdef __cplusplus
+extern "C"
+#endif
+const xc_func_info_type xc_func_info_hyb_gga_xc_wb97x_v_cos1 = {
+  XC_HYB_GGA_XC_WB97X_V_COS1,
+  XC_EXCHANGE_CORRELATION,
+  "wB97X-V range-separated functional",
+  XC_FAMILY_HYB_GGA,
+  {&xc_ref_Mardirossian2014_9904, NULL, NULL, NULL, NULL},
+  XC_FLAGS_3D | XC_FLAGS_HYB_CAM | XC_FLAGS_VV10 | MAPLE2C_FLAGS,
+  1e-14,
+  {N_PAR, names, desc, par_wb97x_v_cos1, set_ext_params_cpy_cam},
+  gga_xc_wb97_init, NULL,
+  NULL, &work_gga, NULL
+};
+
+#ifdef __cplusplus
+extern "C"
+#endif
+const xc_func_info_type xc_func_info_hyb_gga_xc_wb97x_v_cos2 = {
+  XC_HYB_GGA_XC_WB97X_V_COS2,
+  XC_EXCHANGE_CORRELATION,
+  "wB97X-V range-separated functional",
+  XC_FAMILY_HYB_GGA,
+  {&xc_ref_Mardirossian2014_9904, NULL, NULL, NULL, NULL},
+  XC_FLAGS_3D | XC_FLAGS_HYB_CAM | XC_FLAGS_VV10 | MAPLE2C_FLAGS,
+  1e-14,
+  {N_PAR, names, desc, par_wb97x_v_cos2, set_ext_params_cpy_cam},
+  gga_xc_wb97_init, NULL,
+  NULL, &work_gga, NULL
+};
+
+#ifdef __cplusplus
+extern "C"
+#endif
+const xc_func_info_type xc_func_info_hyb_gga_xc_wb97x_v_cos3 = {
+  XC_HYB_GGA_XC_WB97X_V_COS3,
+  XC_EXCHANGE_CORRELATION,
+  "wB97X-V range-separated functional",
+  XC_FAMILY_HYB_GGA,
+  {&xc_ref_Mardirossian2014_9904, NULL, NULL, NULL, NULL},
+  XC_FLAGS_3D | XC_FLAGS_HYB_CAM | XC_FLAGS_VV10 | MAPLE2C_FLAGS,
+  1e-14,
+  {N_PAR, names, desc, par_wb97x_v_cos3, set_ext_params_cpy_cam},
+  gga_xc_wb97_init, NULL,
+  NULL, &work_gga, NULL
+};
+
+#ifdef __cplusplus
+extern "C"
+#endif
+const xc_func_info_type xc_func_info_hyb_gga_xc_wb97x_v_cos4 = {
+  XC_HYB_GGA_XC_WB97X_V_COS4,
+  XC_EXCHANGE_CORRELATION,
+  "wB97X-V range-separated functional",
+  XC_FAMILY_HYB_GGA,
+  {&xc_ref_Mardirossian2014_9904, NULL, NULL, NULL, NULL},
+  XC_FLAGS_3D | XC_FLAGS_HYB_CAM | XC_FLAGS_VV10 | MAPLE2C_FLAGS,
+  1e-14,
+  {N_PAR, names, desc, par_wb97x_v_cos4, set_ext_params_cpy_cam},
   gga_xc_wb97_init, NULL,
   NULL, &work_gga, NULL
 };
