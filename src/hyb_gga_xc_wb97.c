@@ -13,21 +13,21 @@
 #define XC_HYB_GGA_XC_WB97X_V      466 /* Mardirossian and Head-Gordon             */
 #define XC_HYB_GGA_XC_WB97X_D      471 /* Chai and Head-Gordon                     */
 #define XC_HYB_GGA_XC_WB97X_D3     399 /* Lin et al                                */
-#define XC_HYB_GGA_XC_WB97X_V_CX0  885
-#define XC_HYB_GGA_XC_WB97X_V_CX1  886
-#define XC_HYB_GGA_XC_WB97X_V_CX2  887
-#define XC_HYB_GGA_XC_WB97X_V_CX3  888
-#define XC_HYB_GGA_XC_WB97X_V_CX4  889
-#define XC_HYB_GGA_XC_WB97X_V_CSS0 890
-#define XC_HYB_GGA_XC_WB97X_V_CSS1 891
-#define XC_HYB_GGA_XC_WB97X_V_CSS2 892
-#define XC_HYB_GGA_XC_WB97X_V_CSS3 893
-#define XC_HYB_GGA_XC_WB97X_V_CSS4 894
-#define XC_HYB_GGA_XC_WB97X_V_COS0 895
-#define XC_HYB_GGA_XC_WB97X_V_COS1 896
-#define XC_HYB_GGA_XC_WB97X_V_COS2 897
-#define XC_HYB_GGA_XC_WB97X_V_COS3 898
-#define XC_HYB_GGA_XC_WB97X_V_COS4 899
+#define XC_HYB_GGA_XC_WB97X_V_CX0  885 /* wB97X-V derives                          */
+#define XC_HYB_GGA_XC_WB97X_V_CX1  886 /* wB97X-V derives                          */
+#define XC_HYB_GGA_XC_WB97X_V_CX2  887 /* wB97X-V derives                          */
+#define XC_HYB_GGA_XC_WB97X_V_CX3  888 /* wB97X-V derives                          */
+#define XC_HYB_GGA_XC_WB97X_V_CX4  889 /* wB97X-V derives                          */
+#define XC_HYB_GGA_XC_WB97X_V_CSS0 890 /* wB97X-V derives                          */
+#define XC_HYB_GGA_XC_WB97X_V_CSS1 891 /* wB97X-V derives                          */
+#define XC_HYB_GGA_XC_WB97X_V_CSS2 892 /* wB97X-V derives                          */
+#define XC_HYB_GGA_XC_WB97X_V_CSS3 893 /* wB97X-V derives                          */
+#define XC_HYB_GGA_XC_WB97X_V_CSS4 894 /* wB97X-V derives                          */
+#define XC_HYB_GGA_XC_WB97X_V_COS0 895 /* wB97X-V derives                          */
+#define XC_HYB_GGA_XC_WB97X_V_COS1 896 /* wB97X-V derives                          */
+#define XC_HYB_GGA_XC_WB97X_V_COS2 897 /* wB97X-V derives                          */
+#define XC_HYB_GGA_XC_WB97X_V_COS3 898 /* wB97X-V derives                          */
+#define XC_HYB_GGA_XC_WB97X_V_COS4 899 /* wB97X-V derives                          */
 
 typedef struct {
   double c_x[5], c_ss[5], c_ab[5];
