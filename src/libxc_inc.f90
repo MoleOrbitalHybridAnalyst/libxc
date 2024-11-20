@@ -2012,47 +2012,47 @@
  integer(c_int), parameter, public :: XC_MGGA_X_KTBM_GAP  =    760
 
  ! wB97X-V range-separated functional
- integer(c_int), parameter, public :: XC_HYB_GGA_XC_WB97X_V_CX0  =    885
+ integer(c_int), parameter, public :: XC_HYB_GGA_XC_WB97X_CX0  =    885
 
  ! wB97X-V range-separated functional
- integer(c_int), parameter, public :: XC_HYB_GGA_XC_WB97X_V_CX1  =    886
+ integer(c_int), parameter, public :: XC_HYB_GGA_XC_WB97X_CX1  =    886
 
  ! wB97X-V range-separated functional
- integer(c_int), parameter, public :: XC_HYB_GGA_XC_WB97X_V_CX2  =    887
+ integer(c_int), parameter, public :: XC_HYB_GGA_XC_WB97X_CX2  =    887
 
  ! wB97X-V range-separated functional
- integer(c_int), parameter, public :: XC_HYB_GGA_XC_WB97X_V_CX3  =    888
+ integer(c_int), parameter, public :: XC_HYB_GGA_XC_WB97X_CX3  =    888
 
  ! wB97X-V range-separated functional
- integer(c_int), parameter, public :: XC_HYB_GGA_XC_WB97X_V_CX4  =    889
+ integer(c_int), parameter, public :: XC_HYB_GGA_XC_WB97X_CX4  =    889
 
  ! wB97X-V range-separated functional
- integer(c_int), parameter, public :: XC_HYB_GGA_XC_WB97X_V_CSS0  =    890
+ integer(c_int), parameter, public :: XC_HYB_GGA_XC_WB97X_CSS0  =    890
 
  ! wB97X-V range-separated functional
- integer(c_int), parameter, public :: XC_HYB_GGA_XC_WB97X_V_CSS1  =    891
+ integer(c_int), parameter, public :: XC_HYB_GGA_XC_WB97X_CSS1  =    891
 
  ! wB97X-V range-separated functional
- integer(c_int), parameter, public :: XC_HYB_GGA_XC_WB97X_V_CSS2  =    892
+ integer(c_int), parameter, public :: XC_HYB_GGA_XC_WB97X_CSS2  =    892
 
  ! wB97X-V range-separated functional
- integer(c_int), parameter, public :: XC_HYB_GGA_XC_WB97X_V_CSS3  =    893
+ integer(c_int), parameter, public :: XC_HYB_GGA_XC_WB97X_CSS3  =    893
 
  ! wB97X-V range-separated functional
- integer(c_int), parameter, public :: XC_HYB_GGA_XC_WB97X_V_CSS4  =    894
+ integer(c_int), parameter, public :: XC_HYB_GGA_XC_WB97X_CSS4  =    894
 
  ! wB97X-V range-separated functional
- integer(c_int), parameter, public :: XC_HYB_GGA_XC_WB97X_V_COS0  =    895
+ integer(c_int), parameter, public :: XC_HYB_GGA_XC_WB97X_COS0  =    895
 
  ! wB97X-V range-separated functional
- integer(c_int), parameter, public :: XC_HYB_GGA_XC_WB97X_V_COS1  =    896
+ integer(c_int), parameter, public :: XC_HYB_GGA_XC_WB97X_COS1  =    896
 
  ! wB97X-V range-separated functional
- integer(c_int), parameter, public :: XC_HYB_GGA_XC_WB97X_V_COS2  =    897
+ integer(c_int), parameter, public :: XC_HYB_GGA_XC_WB97X_COS2  =    897
 
  ! wB97X-V range-separated functional
- integer(c_int), parameter, public :: XC_HYB_GGA_XC_WB97X_V_COS3  =    898
+ integer(c_int), parameter, public :: XC_HYB_GGA_XC_WB97X_COS3  =    898
 
  ! wB97X-V range-separated functional
- integer(c_int), parameter, public :: XC_HYB_GGA_XC_WB97X_V_COS4  =    899
+ integer(c_int), parameter, public :: XC_HYB_GGA_XC_WB97X_COS4  =    899
 

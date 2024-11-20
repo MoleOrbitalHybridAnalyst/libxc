@@ -113,21 +113,21 @@ extern xc_func_info_type xc_func_info_hyb_gga_x_cam_s12h;
 extern xc_func_info_type xc_func_info_hyb_gga_x_pbe_erf_gws;
 extern xc_func_info_type xc_func_info_hyb_gga_xc_cam_pbeh;
 extern xc_func_info_type xc_func_info_hyb_gga_xc_camy_pbeh;
-extern xc_func_info_type xc_func_info_hyb_gga_xc_wb97x_v_cx0;
-extern xc_func_info_type xc_func_info_hyb_gga_xc_wb97x_v_cx1;
-extern xc_func_info_type xc_func_info_hyb_gga_xc_wb97x_v_cx2;
-extern xc_func_info_type xc_func_info_hyb_gga_xc_wb97x_v_cx3;
-extern xc_func_info_type xc_func_info_hyb_gga_xc_wb97x_v_cx4;
-extern xc_func_info_type xc_func_info_hyb_gga_xc_wb97x_v_css0;
-extern xc_func_info_type xc_func_info_hyb_gga_xc_wb97x_v_css1;
-extern xc_func_info_type xc_func_info_hyb_gga_xc_wb97x_v_css2;
-extern xc_func_info_type xc_func_info_hyb_gga_xc_wb97x_v_css3;
-extern xc_func_info_type xc_func_info_hyb_gga_xc_wb97x_v_css4;
-extern xc_func_info_type xc_func_info_hyb_gga_xc_wb97x_v_cos0;
-extern xc_func_info_type xc_func_info_hyb_gga_xc_wb97x_v_cos1;
-extern xc_func_info_type xc_func_info_hyb_gga_xc_wb97x_v_cos2;
-extern xc_func_info_type xc_func_info_hyb_gga_xc_wb97x_v_cos3;
-extern xc_func_info_type xc_func_info_hyb_gga_xc_wb97x_v_cos4;
+extern xc_func_info_type xc_func_info_hyb_gga_xc_wb97x_cx0;
+extern xc_func_info_type xc_func_info_hyb_gga_xc_wb97x_cx1;
+extern xc_func_info_type xc_func_info_hyb_gga_xc_wb97x_cx2;
+extern xc_func_info_type xc_func_info_hyb_gga_xc_wb97x_cx3;
+extern xc_func_info_type xc_func_info_hyb_gga_xc_wb97x_cx4;
+extern xc_func_info_type xc_func_info_hyb_gga_xc_wb97x_css0;
+extern xc_func_info_type xc_func_info_hyb_gga_xc_wb97x_css1;
+extern xc_func_info_type xc_func_info_hyb_gga_xc_wb97x_css2;
+extern xc_func_info_type xc_func_info_hyb_gga_xc_wb97x_css3;
+extern xc_func_info_type xc_func_info_hyb_gga_xc_wb97x_css4;
+extern xc_func_info_type xc_func_info_hyb_gga_xc_wb97x_cos0;
+extern xc_func_info_type xc_func_info_hyb_gga_xc_wb97x_cos1;
+extern xc_func_info_type xc_func_info_hyb_gga_xc_wb97x_cos2;
+extern xc_func_info_type xc_func_info_hyb_gga_xc_wb97x_cos3;
+extern xc_func_info_type xc_func_info_hyb_gga_xc_wb97x_cos4;
 
 const xc_func_info_type *xc_hyb_gga_known_funct[] = {
   &xc_func_info_hyb_gga_x_n12_sx,
@@ -243,20 +243,20 @@ const xc_func_info_type *xc_hyb_gga_known_funct[] = {
   &xc_func_info_hyb_gga_x_pbe_erf_gws,
   &xc_func_info_hyb_gga_xc_cam_pbeh,
   &xc_func_info_hyb_gga_xc_camy_pbeh,
-  &xc_func_info_hyb_gga_xc_wb97x_v_cx0,
-  &xc_func_info_hyb_gga_xc_wb97x_v_cx1,
-  &xc_func_info_hyb_gga_xc_wb97x_v_cx2,
-  &xc_func_info_hyb_gga_xc_wb97x_v_cx3,
-  &xc_func_info_hyb_gga_xc_wb97x_v_cx4,
-  &xc_func_info_hyb_gga_xc_wb97x_v_css0,
-  &xc_func_info_hyb_gga_xc_wb97x_v_css1,
-  &xc_func_info_hyb_gga_xc_wb97x_v_css2,
-  &xc_func_info_hyb_gga_xc_wb97x_v_css3,
-  &xc_func_info_hyb_gga_xc_wb97x_v_css4,
-  &xc_func_info_hyb_gga_xc_wb97x_v_cos0,
-  &xc_func_info_hyb_gga_xc_wb97x_v_cos1,
-  &xc_func_info_hyb_gga_xc_wb97x_v_cos2,
-  &xc_func_info_hyb_gga_xc_wb97x_v_cos3,
-  &xc_func_info_hyb_gga_xc_wb97x_v_cos4,
+  &xc_func_info_hyb_gga_xc_wb97x_cx0,
+  &xc_func_info_hyb_gga_xc_wb97x_cx1,
+  &xc_func_info_hyb_gga_xc_wb97x_cx2,
+  &xc_func_info_hyb_gga_xc_wb97x_cx3,
+  &xc_func_info_hyb_gga_xc_wb97x_cx4,
+  &xc_func_info_hyb_gga_xc_wb97x_css0,
+  &xc_func_info_hyb_gga_xc_wb97x_css1,
+  &xc_func_info_hyb_gga_xc_wb97x_css2,
+  &xc_func_info_hyb_gga_xc_wb97x_css3,
+  &xc_func_info_hyb_gga_xc_wb97x_css4,
+  &xc_func_info_hyb_gga_xc_wb97x_cos0,
+  &xc_func_info_hyb_gga_xc_wb97x_cos1,
+  &xc_func_info_hyb_gga_xc_wb97x_cos2,
+  &xc_func_info_hyb_gga_xc_wb97x_cos3,
+  &xc_func_info_hyb_gga_xc_wb97x_cos4,
   NULL
 };
